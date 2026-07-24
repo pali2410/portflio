@@ -1,0 +1,14 @@
+.git
+.git/**
+node_modules
+node_modules/**
+.github
+.github/**
+*.py
+*.log
+.env
+.vscode
+.idea
+package.json
+package-lock.json
+wrangler.jsonc

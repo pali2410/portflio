@@ -3,15 +3,6 @@
   "name": "portflio",
   "compatibility_date": "2026-07-24",
   "assets": {
-    "directory": ".",
-    "exclude": [
-      "node_modules/**",
-      ".git/**",
-      ".github/**",
-      "*.log",
-      ".env",
-      "package-lock.json",
-      "package.json"
-    ]
+    "directory": "."
   }
 }
