@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preload" as="image" href="/textures/paper-texture.webp" type="image/webp" fetchpriority="high" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="/favico.png" />
+  <link rel="apple-touch-icon" href="/favico.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fafafa" />
+
+  <!-- SEO Meta Tags -->
+  <title>Paramveer Sinh Zala | Creative 3D & Full-Stack Developer Portfolio</title>
+  <meta name="description"
+    content="Interactive 3D developer portfolio by Paramveer Sinh Zala. Explore WebGL experiences, React applications, security scanners like Vulnora, and live production client projects." />
+  <meta name="author" content="Paramveer Sinh Zala" />
+  <meta name="keywords"
+    content="Paramveer, Paramveer Sinh Zala, web developer portfolio, 3D web development, Three.js developer, React portfolio, Full-Stack engineer, Vulnora, Prompt Community App" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://itomdev.com/" />
+
+  <!-- Open Graph (Facebook, LinkedIn, Discord) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Paramveer Sinh Zala | Creative 3D & Full-Stack Developer Portfolio" />
+  <meta property="og:description"
+    content="Interactive 3D developer portfolio by Paramveer Sinh Zala. Explore WebGL experiences, React applications, Vulnora vulnerability scanner, and client production projects." />
+  <meta property="og:url" content="https://itomdev.com/" />
+  <meta property="og:site_name" content="Paramveer Sinh Zala Portfolio" />
+  <meta property="og:image" content="https://itomdev.com/og-image.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paramveer Sinh Zala | Creative 3D & Full-Stack Developer Portfolio" />
+  <meta name="twitter:description"
+    content="Interactive 3D developer portfolio by Paramveer Sinh Zala. Explore WebGL experiences, React applications, and live production projects." />
+  <meta name="twitter:image" content="https://itomdev.com/og-image.webp" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paramveer Sinh Zala",
+        "alternateName": ["Paramveer", "Paramveer Zala"],
+        "url": "https://itomdev.com",
+        "email": "zalaparamveer113@gmail.com",
+        "telephone": "8511542571",
+        "jobTitle": "Full-Stack & Web Security Engineer",
+        "knowsAbout": ["Full-Stack Development", "React", "Three.js", "JavaScript", "TypeScript", "GSAP", "Web Security", "Cloudflare Workers", "Web Development"],
+        "sameAs": [
+          "https://www.linkedin.com/in/paramveer-sinh-zala-601114423/",
+          "https://auro.zalaparamveer113.workers.dev/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://itomdev.com",
+        "name": "Paramveer Sinh Zala Portfolio",
+        "description": "Interactive 3D Developer Portfolio by Paramveer Sinh Zala"
+      }
+    ]
+  </script>
+
+  <!-- Google Fonts: Hand-drawn + Primary -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Gloria+Hallelujah&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Absolute SEO text hiding - completely accessible to Googlebot, invisible to users */
+    .sr-only-seo {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  
+    /* Mobile & Cross-Device Responsive Optimizations */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      touch-action: manipulation;
+      overscroll-behavior: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #fafafa;
+    }
+
+    #root {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      touch-action: none;
+      display: block;
+      outline: none;
+    }
+
+    /* Interactive Touch Targets for Mobile */
+    button, a, input, textarea, select {
+      touch-action: manipulation;
+      font-family: inherit;
+    }
+
+    /* Mobile Overlays & Modals Responsive Rules */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+      
+      /* UI Navigation Buttons Responsive Scaling */
+      .nav-button, button {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Extra Small Screens / Compact Mobile Phones */
+      body {
+        font-size: 13px;
+      }
+    }
+
+    /* Landscape Mode Mobile Screens */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #root {
+        height: 100vh;
+      }
+    }
+
+  </style>
+  <script type="module" crossorigin src="/assets/index-DV-1WFZA.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-7YSu33UF.css">
+</head>
+
+<body>
+  <!-- SEO Fallback for WebGL SPAs -->
+  <div id="seo-content" class="sr-only-seo">
+    <header>
+      <h1>Paramveer Sinh Zala | Creative 3D Web Developer & Full-Stack Engineer Portfolio</h1>
+      <p>Interactive, WebGL-powered portfolio showcasing the intersection of modern full-stack engineering, web security, and 3D web art.</p>
+    </header>
+    
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="/">Home (The Corridor)</a></li>
+        <li><a href="/gallery">Gallery & Projects</a></li>
+        <li><a href="/about">About Me (The Studio)</a></li>
+        <li><a href="/contact">Contact & Socials</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <article id="home-corridor">
+        <header>
+          <h2>Experience the 3D Corridor: A Journey Through Code, Security, and Art</h2>
+        </header>
+        <section>
+          <h3>Welcome to Paramveer Sinh Zala's Digital Universe</h3>
+          <p>
+            Welcome to the interactive 3D portfolio of <strong>Paramveer Sinh Zala</strong>. 
+            If you are searching for an innovative Full-Stack Developer, a passionate Web Security Engineer, or a digital creator who builds high-performance web applications, you have arrived at the right destination. 
+            This website is an immersive, fully interactive WebGL experience built with modern web technologies. 
+            Step into the hand-drawn 3D corridor where every texture, frame, and interactive door opens up to client production projects, security applications, and full-stack web platforms.
+          </p>
+          <p>
+            As a developer, I specialize in combining full-stack architecture with visual excellence and security auditing. 
+            Leveraging tools like React, Three.js, Cloudflare Workers, and GSAP, this experience delivers fast performance and smooth interactivity. 
+            Navigate through the doors to explore featured projects like <strong>Prompt Community Post App (Auro)</strong>, <strong>Vulnora Vulnerability Scanner</strong>, and live client production websites.
+          </p>
+        </section>
+      </article>
+
+      <article id="about-me">
+        <header>
+          <h2>About Paramveer Sinh Zala: The Engineer Behind the Screen</h2>
+        </header>
+        <section>
+          <h3>My Developer Journey & Bio</h3>
+          <p>
+            My name is <strong>Paramveer Sinh Zala</strong>, a dedicated Full-Stack Developer & Web Security Specialist with expertise in building scalable, secure, and visually stunning web applications. 
+            I build production-ready digital solutions ranging from edge-rendered web applications to vulnerability scanners and corporate client platforms.
+          </p>
+          <p>
+            <strong>Direct Contact Info:</strong><br>
+            • Email: <a href="mailto:zalaparamveer113@gmail.com">zalaparamveer113@gmail.com</a><br>
+            • Phone: <a href="tel:8511542571">8511542571</a> (+91 8511542571)<br>
+            • LinkedIn: <a href="https://www.linkedin.com/in/paramveer-sinh-zala-601114423/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/paramveer-sinh-zala-601114423/</a>
+          </p>
+        </section>
+        <section>
+          <h3>Core Technical Skills & Stack</h3>
+          <p>
+            My technology stack is selected to deliver security, performance, scalability, and seamless user experiences:
+          </p>
+          <ul>
+            <li><strong>Core Languages & Web Standards:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3, Tailwind CSS.</li>
+            <li><strong>Frameworks & Ecosystems:</strong> React.js, Next.js, Cloudflare Workers, Node.js, Express.js.</li>
+            <li><strong>Web Security & Auditing:</strong> Vulnerability scanning, web security assessment (Vulnora), OWASP flaw identification, secure authentication.</li>
+            <li><strong>3D Graphics & Animations:</strong> Three.js, React Three Fiber (R3F), GSAP (GreenSock), WebGL.</li>
+            <li><strong>Deployment & Infrastructure:</strong> Vercel, Cloudflare Pages/Workers, Netlify.</li>
+          </ul>
+        </section>
+      </article>
+
+      <article id="gallery-projects">
+        <header>
+          <h2>The Gallery: Featured Projects and Client Work</h2>
+        </header>
+        <p>
+          Explore an exhibition of Paramveer's commercial client projects, security applications, and live production platforms:
+        </p>
+        
+        <section>
+          <h3>1. Prompt Community Post App (Auro)</h3>
+          <p>
+            <strong>Prompt Community Post App (Auro)</strong> is a full-stack prompt engineering and community sharing web application deployed on Cloudflare Workers edge architecture. 
+            It allows users to create, discover, and interact with AI prompts and community content with ultra-fast response times. 
+            <br>
+            <strong>Live Demo:</strong> <a href="https://auro.zalaparamveer113.workers.dev/" target="_blank" rel="noopener noreferrer">https://auro.zalaparamveer113.workers.dev/</a>
+          </p>
+        </section>
+
+        <section>
+          <h3>2. Vulnora - Website Vulnerability & Security Scanner</h3>
+          <p>
+            <strong>Vulnora</strong> is an automated security scanning and vulnerability detection tool designed to check websites for security flaws, misconfigurations, and vulnerabilities. 
+            It empowers website owners and developers to fix vulnerabilities and secure their web applications against potential threats.
+          </p>
+        </section>
+
+        <section>
+          <h3>3. Vyuhverse Capital - Production Client Website</h3>
+          <p>
+            <strong>Vyuhverse Capital</strong> is a live, production-ready corporate client platform for financial and capital management services, engineered with clean UI architecture and high performance.
+            <br>
+            <strong>Live Website:</strong> <a href="https://www.vyuhversecapital.com/" target="_blank" rel="noopener noreferrer">https://www.vyuhversecapital.com/</a>
+          </p>
+        </section>
+
+        <section>
+          <h3>4. BeCreative Click to Learn - Client Educational Platform</h3>
+          <p>
+            <strong>BeCreative Click to Learn</strong> is an interactive educational and learning portal designed for digital skill development, featuring custom structured HTML modules and responsive design.
+            <br>
+            <strong>Live Website:</strong> <a href="https://becreativeclicktolearn.com/html" target="_blank" rel="noopener noreferrer">https://becreativeclicktolearn.com/html</a>
+          </p>
+        </section>
+
+        <section>
+          <h3>5. GlowDesk - Live SaaS Client Website</h3>
+          <p>
+            <strong>GlowDesk</strong> is a production client web application hosted on Vercel featuring modern frontend user interface components and optimized asset delivery.
+            <br>
+            <strong>Live Website:</strong> <a href="https://glowdesk-seven.vercel.app/" target="_blank" rel="noopener noreferrer">https://glowdesk-seven.vercel.app/</a>
+          </p>
+        </section>
+      </article>
+
+      <article id="contact-room">
+        <header>
+          <h2>Let's Connect & Work Together: Contact Paramveer</h2>
+        </header>
+        <section>
+          <h3>Freelance, Full-Stack & Security Consultation</h3>
+          <p>
+            Are you looking to hire a skilled Full-Stack Developer, build custom web platforms, or audit your web applications for security vulnerabilities? 
+            Paramveer Sinh Zala is open to discussing new projects, client work, contract roles, and full-time opportunities.
+          </p>
+        </section>
+        
+        <aside>
+          <h3>Direct Contact Details</h3>
+          <p>
+            • <strong>Email:</strong> <a href="mailto:zalaparamveer113@gmail.com">zalaparamveer113@gmail.com</a><br>
+            • <strong>Phone / WhatsApp:</strong> <a href="tel:8511542571">8511542571</a> (+91 8511542571)<br>
+            • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/paramveer-sinh-zala-601114423/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a><br>
+          </p>
+        </aside>
+      </article>
+    </main>
+  </div>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    Please enable JavaScript to experience the interactive 3D portfolio of Paramveer Sinh Zala.
+  </noscript>
+
+  <div id="root"></div>
+</body>
+
+</html>

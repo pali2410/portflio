@@ -1,0 +1,16 @@
+{
+  "name": "paramveer-portfolio",
+  "version": "1.0.0",
+  "description": "Paramveer Sinh Zala - Creative 3D & Full-Stack Developer Portfolio",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static build ready'",
+    "start": "serve -p 3000",
+    "dev": "serve -p 3000",
+    "preview": "serve -p 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
