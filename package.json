@@ -6,11 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "echo 'Static build ready'",
-    "start": "serve -p 3000",
-    "dev": "serve -p 3000",
-    "preview": "serve -p 3000"
+    "start": "npx serve -p 3000",
+    "dev": "npx serve -p 3000",
+    "preview": "npx serve -p 3000"
   },
-  "dependencies": {
-    "serve": "^14.2.4"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
