@@ -159,88 +159,7 @@
     }
 
   
-    /* Mobile Dedicated HUD Header Overlay */
-    .mobile-hud-header {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-hud-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        width: calc(100% - 24px);
-        max-width: 420px;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: 16px;
-        padding: 8px 14px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        pointer-events: auto;
-        text-align: center;
-      }
-
-      .mobile-hud-title {
-        font-family: 'Rubik Scribble', 'Caveat', cursive, sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin: 0;
-        line-height: 1.2;
-        letter-spacing: 0.5px;
-      }
-
-      .mobile-hud-subtitle {
-        font-family: 'Inter', sans-serif;
-        font-size: 11px;
-        font-weight: 500;
-        color: #555;
-        margin: 2px 0 6px 0;
-      }
-
-      .mobile-hud-links {
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-
-      .mobile-hud-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4px 10px;
-        font-family: 'Inter', sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        color: #1a1a1a;
-        background: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-
-      .mobile-hud-btn:active {
-        background: #e0e0e0;
-        transform: scale(0.96);
-      }
-
-      .mobile-hud-btn-primary {
-        background: #25d366;
-        color: #ffffff;
-        border-color: #20bd5a;
-      }
-    }
+    
 
   </style>
   <script type="module" crossorigin src="/assets/index-DV-1WFZA.js"></script>
@@ -401,18 +320,52 @@
   </noscript>
 
   
-  <!-- Dedicated Responsive Mobile Header Overlay -->
-  <div class="mobile-hud-header" id="mobile-header-overlay">
-    <div class="mobile-hud-title">PARAMVEER SINH ZALA (PALI)</div>
-    <div class="mobile-hud-subtitle">Full-Stack & Web Security Engineer</div>
-    <div class="mobile-hud-links">
-      <a href="https://wa.me/918511542571" target="_blank" rel="noopener noreferrer" class="mobile-hud-btn mobile-hud-btn-primary">💬 WhatsApp</a>
-      <a href="https://www.linkedin.com/in/paramveer-sinh-zala-601114423/" target="_blank" rel="noopener noreferrer" class="mobile-hud-btn">💼 LinkedIn</a>
-      <a href="https://github.com/pali2410" target="_blank" rel="noopener noreferrer" class="mobile-hud-btn">🐙 GitHub</a>
-    </div>
-  </div>
+  
 
   <div id="root"></div>
+
+  <!-- Global Web Audio & Sound Unlock Script -->
+  <script>
+    (function() {
+      // Unmute sound by default
+      try {
+        localStorage.setItem("audio_muted", "false");
+      } catch(e){}
+
+      function unlockAllAudio() {
+        try {
+          var AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            if (window._globalAudioCtx && window._globalAudioCtx.state === "suspended") {
+              window._globalAudioCtx.resume();
+            }
+          }
+        } catch(e){}
+
+        // Resume all Web Audio API contexts
+        try {
+          if (window.THREE && window.THREE.AudioContext) {
+            var ctx = window.THREE.AudioContext.getContext();
+            if (ctx && ctx.state === "suspended") {
+              ctx.resume();
+            }
+          }
+        } catch(e){}
+
+        // Remove event listeners after unlocking
+        window.removeEventListener('pointerdown', unlockAllAudio);
+        window.removeEventListener('touchstart', unlockAllAudio);
+        window.removeEventListener('click', unlockAllAudio);
+        window.removeEventListener('keydown', unlockAllAudio);
+      }
+
+      window.addEventListener('pointerdown', unlockAllAudio, { passive: true });
+      window.addEventListener('touchstart', unlockAllAudio, { passive: true });
+      window.addEventListener('click', unlockAllAudio, { passive: true });
+      window.addEventListener('keydown', unlockAllAudio, { passive: true });
+    })();
+  </script>
+
 </body>
 
 </html>
